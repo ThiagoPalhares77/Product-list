@@ -37,8 +37,8 @@
           <label for="value">Valor</label>
           <input type="text" id="value" />
         </div>
-        <button onclick="produto.adicionar()">Adicionar</button>
-        <button onclick="produto.excluir()">Excluir</button>
+        <button onclick="produto.save()">Salvar</button>
+        <button onclick="produto.cancel()">Cancelar</button>
       </div>
 
       <div class="content">
@@ -49,26 +49,7 @@
             <th>Venda</th>
             <th class="center">Ações</th>
           </thead>
-          <tbody>
-            <tr>
-              <td class="center"></td>
-              <td></td>
-              <td></td>
-              <td class="center">
-                <img src="assets/edit.svg" alt="" />
-                <img src="assets/delete.svg" alt="" />
-              </td>
-            </tr>
-            <tr>
-              <td class="center"></td>
-              <td></td>
-              <td></td>
-              <td class="center">
-                <img src="assets/edit.svg" alt="" />
-                <img src="assets/delete.svg" alt="" />
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="tbody"></tbody>
         </table>
       </div>
     </main>
