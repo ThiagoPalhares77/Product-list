@@ -11,7 +11,37 @@ class Produto {
       this.add(product)
     }
 
-    console.log(this.productsArray)
+    this.tableList()
+    this.cancel()
+  }
+
+  tableList() {
+    let tbody = document.getElementById('tbody')
+    tbody.innerText = ''
+
+    for (let i = 0; i < this.productsArray.length; i++) {
+      let tr = tbody.insertRow()
+
+      let td_id = tr.insertCell()
+      let td_product = tr.insertCell()
+      let td_value = tr.insertCell()
+      let td_action = tr.insertCell()
+
+      td_id.innerText = this.productsArray[i].id
+      td_product.innerText = this.productsArray[i].productName
+      td_value.innerText = this.productsArray[i].value
+
+      td_id.classList.add('center')
+
+      let imgEdit = document.createElement('img')
+      imgEdit.src = 'assets/edit.svg'
+
+      let imgDel = document.createElement('img')
+      imgDel.src = 'assets/delete.svg'
+
+      td_action.appendChild(imgEdit)
+      td_action.appendChild(imgDel)
+    }
   }
 
   add(product) {
@@ -44,7 +74,10 @@ class Produto {
     return true
   }
 
-  cancel() {}
+  cancel() {
+    document.getElementById('product').value = ''
+    document.getElementById('value').value = ''
+  }
 }
 
 var produto = new Produto()
